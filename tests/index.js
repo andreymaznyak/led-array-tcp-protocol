@@ -3,7 +3,8 @@ const mockServer = require("./mockServer");
 const mockClient = require("./mockClient");
 const port = 1677;
 const address = "127.0.0.1";
-mockServer.server.listen(port, address);
+mockServer.server.listen(port);
+
 mockClient
   .connect(port, address)
   .then(() => {
@@ -21,4 +22,8 @@ setTimeout(() => {
   mockServer.sendUpdateNumbersPackage();
   mockServer.sendSetDigitCompletedPackage();
 }, 1000);
+
+setInterval(() => {
+  mockServer.sendSetDigitCompletedPackage();
+}, 5000);
 console.log(`socket listen ${port}`);

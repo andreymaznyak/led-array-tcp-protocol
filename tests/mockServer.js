@@ -55,6 +55,7 @@ const server = net.createServer(function(socket) {
           break;
         }
         default: {
+          parsedLength += 1;
           console.warn(new Error("unknow package id"));
         }
       }
