@@ -1,6 +1,10 @@
 const net = require("net");
 const port = 1337;
-const { ClientInfoPackage, ClientPackageTypes } = require("./protocol");
+const {
+  ClientInfoPackage,
+  PressButtonPackage,
+  ClientPackageTypes
+} = require("../index");
 
 const server = net.createServer(function(socket) {
   // on(event: "close", listener: (had_error: boolean) => void): this;
@@ -21,14 +25,20 @@ const server = net.createServer(function(socket) {
       case ClientPackageTypes.CLIENT_INFO: {
         const package = ClientInfoPackage(data);
         console.log("package", JSON.stringify(package, null, 4));
+        break;
       }
       case ClientPackageTypes.PRESS_BUTTON: {
+        const package = PressButtonPackage(data);
+        console.log("package", JSON.stringify(package, null, 4));
+        break;
+      }
+      default: {
+        console.warn(new Error("unknow package id"));
       }
     }
-    console.log("data", data.byteLength);
   });
-  socket.on("close", status => {
-    console.log("close", status);
+  socket.on("close", had_error => {
+    console.log("close had_error", had_error);
   });
 
   // socket.pipe(socket);
