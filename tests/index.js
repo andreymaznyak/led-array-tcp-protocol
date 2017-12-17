@@ -1,7 +1,7 @@
 const assert = require("assert");
 const mockServer = require("./mockServer");
 const mockClient = require("./mockClient");
-const port = 1337;
+const port = 1677;
 const address = "127.0.0.1";
 mockServer.server.listen(port, address);
 mockClient
