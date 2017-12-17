@@ -1,5 +1,7 @@
 
 #  Протокол обмена
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/andreymaznyak/led-array-tcp-protocol.svg)](https://greenkeeper.io/)
   
 ##  Общая информация:
    
