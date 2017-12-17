@@ -1,6 +1,5 @@
 const net = require("net");
 const client = new net.Socket();
-client.setNoDelay(true);
 
 const {
   ClientInfoPackage,

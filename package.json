@@ -9,6 +9,6 @@
     "preversion": "git pull",
     "postversion": "git push origin master --tags && npm publish ."
   },
-  "author": "",
+  "author": "Andrey Maznyak <andreymaznyak@gmail.com>",
   "license": "ISC"
 }
