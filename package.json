@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "node ./tests",
-    "start": "node server.js"
+    "start": "node server.js",
+    "preversion": "git pull",
+    "postversion": "git push origin master --tags && npm publish ."
   },
   "author": "",
   "license": "ISC"
