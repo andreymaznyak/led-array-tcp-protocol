@@ -1,6 +1,6 @@
 {
   "name": "led-array-tcp-protocol",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Tcp протокол для взаимодейсвия со стойками",
   "main": "index.js",
   "scripts": {
