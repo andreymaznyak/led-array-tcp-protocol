@@ -16,14 +16,26 @@ mockClient
     throw e;
   });
 
-setTimeout(() => {
-  mockServer.sendGetInfoPackage();
-  mockServer.sendRestartPackage();
-  mockServer.sendUpdateNumbersPackage();
-  mockServer.sendSetDigitCompletedPackage();
-}, 1000);
+// setTimeout(() => {
+//   mockServer.sendGetInfoPackage();
+//   mockServer.sendRestartPackage();
+//   mockServer.sendUpdateNumbersPackage();
+//   mockServer.sendSetDigitCompletedPackage();
+// }, 1000);
 
-setInterval(() => {
-  mockServer.sendSetDigitCompletedPackage();
-}, 5000);
+// setInterval(() => {
+//   mockServer.sendSetDigitCompletedPackage();
+// }, 15000);
+
+// setInterval(() => {
+//   mockServer.sendGetInfoPackage();
+// }, 14000);
+
+// setInterval(() => {
+//   mockServer.sendRestartPackage();
+// }, 13000);
+
+// setInterval(() => {
+//   mockServer.sendUpdateNumbersPackage();
+// }, 12000);
 console.log(`socket listen ${port}`);

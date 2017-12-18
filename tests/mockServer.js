@@ -16,6 +16,17 @@ const sockets = [];
 const server = net.createServer(function(socket) {
   console.log("new socket ", socket.address());
   sockets.push(socket);
+
+  //socket.on("connect", () => {
+  const package = UpdateNumbersPackage();
+  for (let i = 0; i < 24; i++) {
+    package.setClient(i, i * 100, i % 2); //  Math.floor(Math.random() * 10000)
+  }
+  console.log(JSON.stringify(package));
+  console.log(new Uint8Array(package.buff));
+  socket.write(new Buffer(package.buff));
+  //});
+
   socket.on("close", had_error => {
     const foundIndex = sockets.indexOf(socket);
     if (foundIndex >= 0) {
@@ -100,7 +111,7 @@ module.exports = {
     sockets.forEach(socket => {
       const package = UpdateNumbersPackage();
       for (let i = 0; i < 24; i++) {
-        package.setClient(i, i * 100, Math.floor(Math.random() * 2)); //  Math.floor(Math.random() * 10000)
+        package.setClient(i, i * 100, i % 2); //  Math.floor(Math.random() * 10000)
       }
       console.log(JSON.stringify(package));
       socket.write(new Buffer(package.buff));
